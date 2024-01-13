@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sparkling_clean/constants/colors.dart';
 import 'package:sparkling_clean/routes/routes_generator.dart';
+import 'package:sparkling_clean/screens/navigation/navigation_screen.dart';
 import 'package:sparkling_clean/screens/onboarding/onboarding_screen.dart';
+import 'package:sparkling_clean/screens/profile/profile_screen.dart';
+import 'package:sparkling_clean/screens/service_provider/service_provider.dart';
 import 'package:sparkling_clean/screens/splash/splash_screen.dart';
 
 void main() {
@@ -23,10 +26,12 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Sparkling clean',
         theme: ThemeData(
+
           fontFamily: "Roboto",
           primarySwatch: Colors.orange,
           scaffoldBackgroundColor: Colors.white,
-          appBarTheme: const AppBarTheme(color: Colors.white, elevation: 0.0),
+          appBarTheme:  const AppBarTheme(
+              backgroundColor: Colors.white, elevation: 0.0),
         ),
         navigatorKey: RouteGenerator.navigatorKey,
         initialRoute: SplashScreen.routeName,

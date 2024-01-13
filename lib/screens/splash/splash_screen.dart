@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sparkling_clean/constants/app_image.dart';
@@ -5,6 +6,7 @@ import 'package:sparkling_clean/constants/colors.dart';
 import 'package:sparkling_clean/constants/font_size.dart';
 import 'package:sparkling_clean/constants/font_weight.dart';
 import 'package:sparkling_clean/routes/routes_generator.dart';
+import 'package:sparkling_clean/screens/login/login_screen.dart';
 import 'package:sparkling_clean/screens/onboarding/onboarding_screen.dart';
 
 import '../../constants/textstyless.dart';
@@ -89,12 +91,15 @@ class _SplashScreenState extends State<SplashScreen> {
                           style: kW5F24G.copyWith(
                             fontWeight: kW6,
                             fontSize: sfont_18,
-                            decoration: TextDecoration.underline,
                           ),
                           children: [
-                            const TextSpan(text: "Already have an Account?"),
+                            const TextSpan(text: "Already have an Account? "),
                             TextSpan(
-                                text: " Sign in",
+                                text: "Sign in",
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    RouteGenerator.replacePage(LoginScreen.routeName);
+                                  },
                                 style: kW5F24G.copyWith(
                                   color: textOrange,
                                   fontWeight: kW6,

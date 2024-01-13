@@ -5,13 +5,16 @@ class CustomButton extends StatelessWidget {
   void Function()? onPressed;
   String? buttonName;
   Color? backgroundColor;
+  double ? height;
   CustomButton(
-      {super.key, this.buttonName, this.onPressed, this.backgroundColor});
+      {super.key,
+        this.height = 60,
+        this.buttonName, this.onPressed, this.backgroundColor});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: height,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(backgroundColor: backgroundColor),
           onPressed: onPressed,

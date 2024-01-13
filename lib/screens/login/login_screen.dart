@@ -13,6 +13,7 @@ import 'package:sparkling_clean/widgets/custom_text_field.dart';
 import 'package:sparkling_clean/widgets/leading.dart';
 
 import '../../constants/font_size.dart';
+import '../navigation/navigation_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -28,9 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          leading: const Leading()
-      ),
+      appBar: AppBar(),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 35.sp),
         children: [
@@ -85,7 +84,9 @@ class _LoginScreenState extends State<LoginScreen> {
           CustomButton(
             backgroundColor: textOrange,
             buttonName: "Sign in",
-            onPressed: () {},
+            onPressed: () {
+              RouteGenerator.replacePage(Navigation.routeName);
+            },
           ),
           SizedBox(
             height: 30.sp,
@@ -159,7 +160,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       text: "Sign up",
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          RouteGenerator.navigateTo(RegistrationScreen.routeName);
+                          RouteGenerator.navigateTo(
+                              RegistrationScreen.routeName);
                         },
                       style: kW5F24G.copyWith(
                         color: textOrange,
